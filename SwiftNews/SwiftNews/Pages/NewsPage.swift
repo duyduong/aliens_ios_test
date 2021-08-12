@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUIFlowLayout
 
 struct NewsPage: View {
     let news: News
