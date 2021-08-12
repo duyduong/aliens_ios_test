@@ -1,13 +1,13 @@
 //
-//  NewsPage.swift
+//  SmartPage.swift
 //  SwiftNews
 //
-//  Created by Dao Duy Duong on 11/08/2021.
+//  Created by Dao Duy Duong on 12/08/2021.
 //
 
 import SwiftUI
 
-struct NewsPage: View {
+struct SmartPage: View {
     let news: News
     
     var body: some View {
@@ -37,6 +37,5 @@ struct NewsPage: View {
             }
             .padding(.horizontal)
         }
-        .navigationBarTitle("", displayMode: .inline)
     }
 }

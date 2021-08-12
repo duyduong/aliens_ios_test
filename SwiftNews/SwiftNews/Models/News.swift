@@ -15,7 +15,7 @@ enum TextStyle {
 
 struct News: Decodable, Identifiable {
     enum CodingKeys: String, CodingKey {
-        case title, date, author, extern
+        case title, url, date, author, extern
         case postImageUrl, paragraphs
     }
     
@@ -41,21 +41,26 @@ struct News: Decodable, Identifiable {
     
     var id = UUID()
     var title: String
+    var url: URL
     var date: String
     var author: String
-    var extern: String?
+    var extern: String
     var postImageURL: URL
     var paragraphs: [Paragraph]
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         title = try container.decode(String.self, forKey: .title)
+        url = try container.decode(URL.self, forKey: .url)
         date = try container.decode(String.self, forKey: .date)
         author = try container.decode(String.self, forKey: .author)
         extern = try container.decode(String.self, forKey: .extern)
         postImageURL = try container.decode(URL.self, forKey: .postImageUrl)
         paragraphs = try container.decode([Paragraph].self, forKey: .paragraphs)
     }
+}
+
+extension Collection where Element == News {
 }
 
 extension Collection where Element == News.TextContent {
