@@ -50,6 +50,7 @@ fileprivate extension NewsParagraph {
             
             let header = Style {
                 $0.font = UIFont.preferredFont(forTextStyle: .title3)
+                $0.traitVariants = .bold
             }
             
             let note = Style {
